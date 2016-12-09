@@ -1,0 +1,3 @@
+
+DOVECOT %{SYSLOGTIMESTAMP:syslog_timestamp} %{IPORHOST:syslog_server} %{SYSLOGPROG}: imap-login: Login: user=<%{WORD:imap_login}>, method=%{WORD:method}, rip=%{IP:client_ip}, lip=%{IP:lip}, mpid=%{INT:mpid}, %{WORD:SSL}, session=<%{GREEDYDATA:session}>
+
