@@ -1,4 +1,4 @@
 NGUSERNAME [a-zA-Z\.\@\-\+_%]+
 NGUSER %{NGUSERNAME}
-NGINXACCESS %{IPORHOST:client_ip} %{NGUSER:ident} %{NGUSER:auth} \[%{HTTPDATE:nginxtimestamp}\] "%{WORD:verb} %{URIPATHPARAM:http_request} HTTP/%{NUMBER:http_version}" %{NUMBER:http_response} (?:%{NUMBER:bytes}|-) (?:"(?:%{URI:referrer}|-)"|%{QS:referrer}) %{QS:agent}
+NGINXACCESS %{IPORHOST:client_ip} %{NGUSER:ident} %{NGUSER:auth} \[%{HTTPDATE:nginxtimestamp}\] "%{WORD:http_verb} %{URIPATHPARAM:http_request} HTTP/%{NUMBER:http_version}" %{NUMBER:http_response} (?:%{NUMBER:bytes}|-) (?:"(?:%{URI:referrer}|-)"|%{QS:referrer}) %{QS:agent}
 
