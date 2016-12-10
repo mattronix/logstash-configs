@@ -1,3 +1,3 @@
 POSTFIXSMTPD %{SYSLOGTIMESTAMP:syslog_timestamp} %{IPORHOST:syslog_server} %{SYSLOGPROG}: %{GREEDYDATA:message}
-POSTFIXSMTP %{SYSLOGTIMESTAMP:syslog_timestamp} %{IPORHOST:syslog_server} %{SYSLOGPROG}: %{WORD:messageid}: to=<%{GREEDYDATA:recipient}>, relay=%{IPORHOST:relay}\[%{IPORHOST:remote_ip}\]:%{INT:remote_port}, delay=%{NUMBER:delay}, delays=%{GREEDYDATA:delays}, dsn=%{GREEDYDATA:dns}, status=%{WORD:sent} \(%{NUMBER:response_code} %{WORD:response} %{GREEDYDATA:id}\)
+POSTFIXSMTP %{SYSLOGTIMESTAMP:syslog_timestamp} %{IPORHOST:syslog_server} %{SYSLOGPROG}: %{WORD:messageid}: to=<%{GREEDYDATA:recipient}>, relay=%{IPORHOST:relay}\[%{IPORHOST:remote_ip}\]:%{INT:remote_port}, delay=%{NUMBER:delay}, delays=%{GREEDYDATA:delays}, dsn=%{GREEDYDATA:dns}, status=%{WORD:sent} \(%{NUMBER:response_code} %{WORD:response} id=%{GREEDYDATA:id}\)
 POSTFIXCLEANUP %{SYSLOGTIMESTAMP:syslog_timestamp} %{IPORHOST:syslog_server} %{SYSLOGPROG}: %{WORD:message_id}:
